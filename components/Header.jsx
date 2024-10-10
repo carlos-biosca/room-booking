@@ -1,64 +1,65 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo.png";
 import { FaUser, FaSignInAlt, FaSignOutAlt, FaBuilding } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="bg-gray-100">
+    <header>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center">
-            <Link href="/">
-              <Image className="h-12 w-12" src={logo} alt="R" priority />
-            </Link>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <Link
-                  href="/"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
-                >
-                  Rooms
-                </Link>
-                {/*Logged In */}
-                <Link
-                  href="/bookings"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
-                >
-                  Bookings
-                </Link>
-                <Link
-                  href="/add-room"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
-                >
-                  Add Room
-                </Link>
-              </div>
+          <Link href="/">
+            <Image className="h-12 w-auto" src={logo} alt="R" priority />
+          </Link>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              <Link
+                href="/"
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
+              >
+                Rooms
+              </Link>
+              {/*Logged In */}
+              <Link
+                href="/bookings"
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
+              >
+                Bookings
+              </Link>
+              <Link
+                href="/add-room"
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
+              >
+                Add Room
+              </Link>
             </div>
           </div>
           {/*Right Side Menu */}
-          <div className="ml-auto">
+          <div>
             <div className="ml-4 flex items-center md:ml-6">
               {/*Logged Out */}
               <Link
                 href="login"
-                className="mr-3 text-gray-800 hover:text-gray-600"
+                className="flex items-center mr-3 text-gray-800 hover:text-gray-600 hover:underline"
               >
                 <FaSignInAlt className="inline mr-1" /> Login
               </Link>
               <Link
                 href="register"
-                className="mr-3 text-gray-800 hover:text-gray-600"
+                className="flex items-center mr-3 text-gray-800 hover:text-gray-600 hover:underline"
               >
                 <FaUser className="inline mr-1" /> Register
               </Link>
               {/*Logged In */}
-              <Link href="my-rooms">
+              <Link
+                href="my-rooms"
+                className="flex items-center mr-3 text-gray-800 hover:text-gray-600 hover:underline"
+              >
                 <FaBuilding className="inline mr-1" /> My Rooms
               </Link>
               <Link
-                href="login.html"
-                className="mx-3 text-gray-800 hover:text-gray-600"
+                href="logout"
+                className="flex items-center mr-3 text-gray-800 hover:text-gray-600 hover:underline"
               >
                 <FaSignOutAlt className="inline mr-1" /> Sign Out
               </Link>
