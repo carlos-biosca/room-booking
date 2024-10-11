@@ -11,6 +11,8 @@ const RoomCard = ({ room }) => {
             alt={room.name}
             className="object-cover rounded-lg sm:rounded-[20px]"
             fill
+            sizes="100vw"
+            priority
           />
         </div>
         <div className="p-2 sm:space-y-2 sm:w-1/2 lg:w-1/3 sm:px-6">
