@@ -3,15 +3,15 @@ import Link from "next/link";
 
 const RoomCard = ({ room }) => {
   return (
-    <div className="bg-white mb-14 shadow-xl rounded-lg sm:rounded-[20px] sm:border">
+    <div className="bg-white mb-14 shadow rounded-lg sm:rounded-[20px] sm:border">
       <div className="flex flex-col sm:flex-row sm:items-center">
         <div className="relative h-[250px] sm:h-[320px] sm:flex-1">
           <Image
             src={`/images/${room.image}`}
             alt={room.name}
-            className="object-cover rounded-lg sm:rounded-[20px]"
+            className="object-cover rounded-lg sm:rounded-r-none"
             fill
-            sizes="100vw"
+            sizes="70vw"
             priority
           />
         </div>

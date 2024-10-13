@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 import rooms from "@/data/rooms.json";
+import BookForm from "@/components/BookForm";
 
 const RoomPage = ({ params }) => {
   const { id } = params;
@@ -34,11 +35,10 @@ const RoomPage = ({ params }) => {
             />
           </div>
 
-          <div className="grid md:grid-cols-3 px-2 sm:px-0">
-            <div className="mt-4 sm:mt-0 md:col-span-2">
+          <div className="grid md:grid-cols-5 px-2 sm:px-0 gap-6">
+            <div className="mt-4 sm:mt-0 md:col-span-3">
               <h2 className="text-xl font-bold">Description</h2>
               <p className="text-gray-600 mb-4">{room.description}</p>
-
               <ul className="space-y-2">
                 <li>
                   <span className="font-semibold text-gray-800">Size:</span>{" "}
@@ -60,7 +60,7 @@ const RoomPage = ({ params }) => {
                 </li>
               </ul>
             </div>
-            <div>Form</div>
+            <BookForm />
           </div>
         </div>
       </div>
