@@ -4,10 +4,13 @@ import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 import rooms from "@/data/rooms.json";
 import BookForm from "@/components/BookForm";
+import Facilities from "@/components/Facilities";
+import Description from "@/components/Description";
 
 const RoomPage = ({ params }) => {
   const { id } = params;
   const room = rooms.find(room => room.$id === id);
+  const amenities = room.amenities.split(", ");
 
   if (!room) {
     return <Heading title="Room not found" />;
@@ -25,7 +28,7 @@ const RoomPage = ({ params }) => {
       <Heading title={room.name} />
       <div className="bg-white">
         <div className="flex flex-col">
-          <div className="relative h-[250px] sm:h-[400px] mb-4 sm:mb-10">
+          <div className="relative h-[250px] sm:h-[400px] mb-6 md:mb-10">
             <Image
               src={`/images/${room.image}`}
               alt={room.name}
@@ -36,29 +39,9 @@ const RoomPage = ({ params }) => {
           </div>
 
           <div className="grid md:grid-cols-5 px-2 sm:px-0 gap-6">
-            <div className="mt-4 sm:mt-0 md:col-span-3">
-              <h2 className="text-xl font-bold">Description</h2>
-              <p className="text-gray-600 mb-4">{room.description}</p>
-              <ul className="space-y-2">
-                <li>
-                  <span className="font-semibold text-gray-800">Size:</span>{" "}
-                  {room.sqft} square feet
-                </li>
-                <li>
-                  <span className="font-semibold text-gray-800">
-                    Availability:
-                  </span>{" "}
-                  {room.availability}
-                </li>
-                <li>
-                  <span className="font-semibold text-gray-800">Price:</span> $
-                  {room.price_per_hour}/hour
-                </li>
-                <li>
-                  <span className="font-semibold text-gray-800">Address:</span>{" "}
-                  {room.address}
-                </li>
-              </ul>
+            <div className="md:col-span-3">
+              <Description room={room} />
+              <Facilities amenities={amenities} />
             </div>
             <BookForm />
           </div>

@@ -1,6 +1,6 @@
 const BookForm = () => {
   return (
-    <form className="p-4 border-2 rounded-xl md:col-span-2">
+    <form className="max-h-max p-4 border-2 rounded-xl md:col-span-2">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label
