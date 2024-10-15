@@ -1,8 +1,9 @@
-import { BsProjector } from "react-icons/bs";
+import { BsProjector, BsCameraVideo } from "react-icons/bs";
 import { FaChalkboard, FaWifi } from "react-icons/fa6";
 import { MdOutlineSurroundSound, MdOutlineContactPhone } from "react-icons/md";
 import { PiVideoConferenceLight, PiTelevisionSimple } from "react-icons/pi";
 import { GrPersonalComputer } from "react-icons/gr";
+import { RiSurroundSoundLine, RiFlashlightFill } from "react-icons/ri";
 
 const icons = {
   Projector: <BsProjector />,
@@ -12,7 +13,10 @@ const icons = {
   "Sound System": <MdOutlineSurroundSound />,
   "Conference Phone": <MdOutlineContactPhone />,
   Television: <PiTelevisionSimple />,
-  Computers: <GrPersonalComputer />
+  Computers: <GrPersonalComputer />,
+  "Video Camera": <BsCameraVideo />,
+  Soundproofing: <RiSurroundSoundLine />,
+  "Lighting Equipment": <RiFlashlightFill />
 };
 
 const Facilities = ({ amenities }) => {

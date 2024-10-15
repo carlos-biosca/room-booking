@@ -41,7 +41,7 @@ const RoomPage = ({ params }) => {
           <div className="grid md:grid-cols-5 px-2 sm:px-0 gap-6">
             <div className="md:col-span-3">
               <Description room={room} />
-              <Facilities amenities={amenities} />
+              {room.amenities ? <Facilities amenities={amenities} /> : null}
             </div>
             <BookForm />
           </div>

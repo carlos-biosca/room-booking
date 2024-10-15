@@ -1,33 +1,48 @@
 const Description = ({ room }) => {
+  const {
+    description,
+    sqft,
+    availability,
+    capacity,
+    price_per_hour,
+    address,
+    location
+  } = room;
   return (
     <>
-      <h2 className="text-xl font-bold">Description</h2>
-      <p className="text-gray-600 mb-4">{room.description}</p>
+      <h2 className="text-xl font-bold mb-1">Description</h2>
+      <p className="text-gray-600 mb-4">{description}</p>
       <ul className="space-y-0.5 mb-4">
-        <li>
-          <span className="font-semibold text-gray-800">Size:</span> {room.sqft}{" "}
-          square feet
-        </li>
+        {sqft ? (
+          <li>
+            <span className="font-semibold text-gray-800">Size:</span> {sqft}{" "}
+            square feet
+          </li>
+        ) : null}
         <li>
           <span className="font-semibold text-gray-800">Availability:</span>{" "}
-          {room.availability}
+          {availability}
         </li>
-        <li>
-          <span className="font-semibold text-gray-800">Capacity:</span>{" "}
-          {room.capacity}
-        </li>
+        {capacity ? (
+          <li>
+            <span className="font-semibold text-gray-800">Capacity:</span>{" "}
+            {capacity}
+          </li>
+        ) : null}
         <li>
           <span className="font-semibold text-gray-800">Price:</span> $
-          {room.price_per_hour}/hour
+          {price_per_hour}/hour
         </li>
         <li>
           <span className="font-semibold text-gray-800">Address:</span>{" "}
-          {room.address}
+          {address}
         </li>
-        <li>
-          <span className="font-semibold text-gray-800">Location:</span>{" "}
-          {room.location}
-        </li>
+        {location ? (
+          <li>
+            <span className="font-semibold text-gray-800">Location:</span>{" "}
+            {location}
+          </li>
+        ) : null}
       </ul>
     </>
   );

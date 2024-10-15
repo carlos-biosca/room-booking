@@ -68,5 +68,75 @@
     "availability": "7 AM - 7 PM",
     "price_per_hour": 60,
     "image": "room-5.jpg"
-  }
+  },
+    {
+    "$id": "6",
+    "user_id": "3",
+    "name": "The Loft",
+    "description": "A trendy, open-concept space for creative meetings.",
+    "sqft": 1200,
+    "capacity": 25,
+    "location": "Building F, 5th Floor",
+    "address": "200 Fifth Ave, New York, NY 10010",
+    "amenities": "Whiteboard, Projector, Sound System, Wi-Fi",
+    "availability": "10 AM - 6 PM",
+    "price_per_hour": 125,
+    "image": "room-6.jpg"
+  },
+  {
+    "$id": "7",
+    "user_id": "3",
+    "name": "Boardroom",
+    "description": "A classic boardroom with a mahogany table.",
+    "sqft": 400,
+    "capacity": 12,
+    "location": "Building G, 3rd Floor",
+    "address": "101 Constitution Ave NW, Washington, DC 20530",
+    "amenities": "Conference Phone, Whiteboard, Wi-Fi",
+    "availability": "8 AM - 5 PM",
+    "price_per_hour": 90,
+    "image": "room-7.jpg"
+  },
+    {
+    "$id": "8",
+    "user_id": "4",
+    "name": "The Studio",
+    "description": "A versatile space perfect for recording sessions and video production.",
+    "sqft": 700,
+    "capacity": 10,
+    "location": "Building H, 2nd Floor",
+    "address": "123 Main St, Anytown, CA 12345",
+    "amenities": "Soundproofing, Lighting Equipment, Video Camera, Wi-Fi",
+    "availability": "12 PM - 10 PM",
+    "price_per_hour": 150,
+    "image": "room-8.jpg"
+  },
+  {
+    "$id": "9",
+    "user_id": "4",
+    "name": "The Library",
+    "description": "A quiet room with bookshelves, ideal for reading and studying.",
+    "sqft": 300,
+    "capacity": 4,
+    "location": "Building H, 3rd Floor",
+    "address": "123 Main St, Anytown, CA 12345",
+    "amenities": "Conference Phone, Wi-Fi",
+    "availability": "9 AM - 5 PM",
+    "price_per_hour": 50,
+    "image": "room-9.jpg"
+  },
+  {
+    "$id": "10",
+    "user_id": "5",
+    "name": "Sala de Reuniones",
+    "description": "Un espacio diseñado para reuniones.",
+    "sqft": 3000,
+    "capacity": "200",
+    "location": "Building G, 3rd Floor",
+    "address": "10 Downing St, Westminster, London SW1A 2AA, United Kingdom",
+    "amenities": "Conference Phone, Television, Wi-Fi",
+    "availability": "24/7",
+    "price_per_hour": 50,
+    "image": "room-10.jpg"
+}
 ]
