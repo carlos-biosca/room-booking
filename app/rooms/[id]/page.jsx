@@ -10,11 +10,10 @@ import Description from "@/components/Description";
 const RoomPage = ({ params }) => {
   const { id } = params;
   const room = rooms.find(room => room.$id === id);
-  const amenities = room.amenities.split(", ");
-
   if (!room) {
     return <Heading title="Room not found" />;
   }
+  const amenities = room.amenities.split(", ");
 
   return (
     <>
