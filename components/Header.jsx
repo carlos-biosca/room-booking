@@ -27,7 +27,7 @@ const Header = () => {
                 Bookings
               </Link>
               <Link
-                href="/add-room"
+                href="/rooms/add"
                 className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
               >
                 Add Room
@@ -39,26 +39,26 @@ const Header = () => {
             <div className="ml-4 flex items-center md:ml-6">
               {/*Logged Out */}
               <Link
-                href="login"
+                href="/login"
                 className="flex items-center mr-3 text-gray-800 hover:text-gray-600 hover:underline"
               >
                 <FaSignInAlt className="inline mr-1" /> Login
               </Link>
               <Link
-                href="register"
+                href="/register"
                 className="flex items-center mr-3 text-gray-800 hover:text-gray-600 hover:underline"
               >
                 <FaUser className="inline mr-1" /> Register
               </Link>
               {/*Logged In */}
               <Link
-                href="my-rooms"
+                href="/rooms/user"
                 className="flex items-center mr-3 text-gray-800 hover:text-gray-600 hover:underline"
               >
                 <FaBuilding className="inline mr-1" /> My Rooms
               </Link>
               <Link
-                href="logout"
+                href="/logout"
                 className="flex items-center mr-3 text-gray-800 hover:text-gray-600 hover:underline"
               >
                 <FaSignOutAlt className="inline mr-1" /> Sign Out
