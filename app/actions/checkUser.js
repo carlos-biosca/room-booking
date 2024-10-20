@@ -3,30 +3,32 @@
 import { createSessionClient } from "@/config/appwrite"
 import { cookies } from "next/headers"
 
-async function destroySession () {
-
-  const sessionCookie = cookies().get('app-session')
+async function checkUser () {
+  const sessionCookie = cookies().get("app-session")
 
   if (!sessionCookie) {
     return {
-      error: "No session found"
+      isAuth: false
     }
   }
 
   try {
     const { account } = await createSessionClient(sessionCookie.value)
-    await account.deleteSession('current')
-    cookies().delete('app-session')
+    const user = await account.get()
 
     return {
-      success: true
+      isAuth: true,
+      info: {
+        name: user.name,
+        email: user.email
+      }
     }
   } catch (err) {
     console.log(err);
     return {
-      error: 'Logout error'
+      isAuth: false
     }
   }
 }
 
-export default destroySession;
+export default checkUser;
