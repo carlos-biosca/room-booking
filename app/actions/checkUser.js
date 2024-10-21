@@ -18,7 +18,7 @@ async function checkUser () {
 
     return {
       isAuth: true,
-      info: {
+      user: {
         name: user.name,
         email: user.email
       }
