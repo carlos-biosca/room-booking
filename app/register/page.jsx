@@ -1,16 +1,43 @@
+"use client";
+
 import Link from "next/link";
 
+import { useEffect } from "react";
+import { useFormState } from "react-dom";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import createUser from "../actions/createUser";
+import { useUser } from "@/context/userContext";
+
 const Register = () => {
+  const [state, formAction] = useFormState(createUser, {});
+  const router = useRouter();
+  const { setIsAuth } = useUser();
+
+  useEffect(() => {
+    if (state?.error) toast.error(state.error);
+    if (state?.success) {
+      setIsAuth(true);
+      toast.success("Registration success");
+      router.push("/");
+    }
+  }, [state]);
+
   return (
     <div className="flex items-center justify-center">
       <div className="bg-white border rounded-lg p-6 w-full max-w-sm mt-20">
-        <form>
+        <form action={formAction}>
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
             Register
           </h2>
 
           <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name</label>
+            <label
+              htmlFor="name"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Name
+            </label>
             <input
               type="text"
               id="name"
@@ -21,8 +48,12 @@ const Register = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 font-bold mb-2"
-            >Email</label>
+            <label
+              htmlFor="email"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -33,8 +64,12 @@ const Register = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700 font-bold mb-2"
-            >Password</label>
+            <label
+              htmlFor="password"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Password
+            </label>
             <input
               type="password"
               id="password"
@@ -46,13 +81,15 @@ const Register = () => {
 
           <div className="mb-6">
             <label
-              htmlFor="confirm-password"
+              htmlFor="confirm"
               className="block text-gray-700 font-bold mb-2"
-            >Confirm Password</label>
+            >
+              Confirm Password
+            </label>
             <input
               type="password"
-              id="confirm-password"
-              name="confirm-password"
+              id="confirm"
+              name="confirm"
               className="border rounded w-full py-2 px-3"
               required
             />
@@ -67,13 +104,16 @@ const Register = () => {
             </button>
 
             <p>
-              Have an account already? <Link href="/login" className="text-blue-500 hover:underline">Login</Link>
+              Have an account already?{" "}
+              <Link href="/login" className="text-blue-500 hover:underline">
+                Login
+              </Link>
             </p>
           </div>
         </form>
       </div>
     </div>
   );
-}
+};
 
 export default Register;
