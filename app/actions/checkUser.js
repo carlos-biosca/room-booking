@@ -11,7 +11,6 @@ async function checkUser () {
       isAuth: false
     }
   }
-
   try {
     const { account } = await createSessionClient(sessionCookie.value)
     const user = await account.get()
@@ -19,6 +18,7 @@ async function checkUser () {
     return {
       isAuth: true,
       user: {
+        id: user.$id,
         name: user.name,
         email: user.email
       }
