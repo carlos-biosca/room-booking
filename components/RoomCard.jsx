@@ -2,12 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 const RoomCard = ({ room }) => {
+  const endpoint = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT;
+  const bucketId = process.env.NEXT_PUBLIC_APPWRITE_IMAGES;
+  const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT;
+
+  const imageUrl = `${endpoint}/storage/buckets/${bucketId}/files/${room.image}/view?project=${projectId}`;
+  const imageSrc = room.image ? imageUrl : "/images/default-image.jpg";
+
   return (
     <div className="bg-white mb-14 shadow rounded-lg sm:rounded-[20px] sm:border">
       <div className="flex flex-col sm:flex-row sm:items-center">
         <div className="relative h-[250px] sm:h-[320px] sm:flex-1">
           <Image
-            src={`/images/${room.image}`}
+            src={imageSrc}
             alt={room.name}
             className="object-cover rounded-lg sm:rounded-r-none"
             fill

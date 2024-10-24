@@ -15,6 +15,13 @@ const RoomPage = async ({ params }) => {
   }
   const amenities = room.amenities.split(", ");
 
+  const endpoint = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT;
+  const bucketId = process.env.NEXT_PUBLIC_APPWRITE_IMAGES;
+  const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT;
+
+  const imageUrl = `${endpoint}/storage/buckets/${bucketId}/files/${room.image}/view?project=${projectId}`;
+  const imageSrc = room.image ? imageUrl : "/images/default-image.jpg";
+
   return (
     <>
       <Link
@@ -29,7 +36,7 @@ const RoomPage = async ({ params }) => {
         <div className="flex flex-col">
           <div className="relative h-[250px] sm:h-[400px] mb-6 md:mb-10">
             <Image
-              src={`/images/${room.image}`}
+              src={imageSrc}
               alt={room.name}
               className=" object-cover rounded-3xl"
               fill
