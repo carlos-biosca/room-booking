@@ -8,6 +8,10 @@ import { redirect } from "next/navigation"
 async function getUserRooms () {
   const sessionCookie = cookies().get('app-session')
 
+  if (!sessionCookie) {
+    return redirect('/login');
+  }
+
   try {
     const { account, databases } = await createSessionClient(sessionCookie.value)
     const user = await account.get()
