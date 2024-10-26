@@ -34,11 +34,11 @@ async function deleteRoom (id) {
       revalidatePath('/', 'layout')
 
       return {
-        success: true
+        success: 'Room deleted successfully!'
       }
     }
     return {
-      error: 'room not found'
+      error: 'Room not found'
     }
   } catch (err) {
     console.log(err);
