@@ -1,7 +1,7 @@
 const Description = ({ room }) => {
   const {
     description,
-    sqft,
+    sqmt,
     availability,
     capacity,
     price_per_hour,
@@ -13,10 +13,10 @@ const Description = ({ room }) => {
       <h2 className="text-xl font-bold mb-1">Description</h2>
       <p className="text-gray-600 mb-4">{description}</p>
       <ul className="space-y-0.5 mb-4">
-        {sqft ? (
+        {sqmt ? (
           <li>
-            <span className="font-semibold text-gray-800">Size:</span> {sqft}{" "}
-            square feet
+            <span className="font-semibold text-gray-800">Size:</span> {sqmt} m
+            <sup>2</sup>
           </li>
         ) : null}
         <li>

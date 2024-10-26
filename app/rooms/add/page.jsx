@@ -53,25 +53,24 @@ const AddRoom = () => {
               id="description"
               name="description"
               className="border rounded w-full h-24 py-2 px-3"
-              placeholder="Enter a description htmlFor the room"
+              placeholder="Enter a description"
               required
             ></textarea>
           </div>
 
           <div className="mb-4">
             <label
-              htmlFor="sqft"
+              htmlFor="sqmt"
               className="block text-gray-700 font-bold mb-2"
             >
-              Square Feet
+              Square Meters
             </label>
             <input
               type="number"
-              id="sqft"
-              name="sqft"
+              id="sqmt"
+              name="sqmt"
               className="border rounded w-full py-2 px-3"
-              placeholder="Enter room size in ft"
-              required
+              placeholder="Enter room size"
             />
           </div>
 
@@ -88,7 +87,6 @@ const AddRoom = () => {
               name="capacity"
               className="border rounded w-full py-2 px-3"
               placeholder="Number of people the room can hold"
-              required
             />
           </div>
 
@@ -139,7 +137,6 @@ const AddRoom = () => {
               name="location"
               className="border rounded w-full py-2 px-3"
               placeholder="Location (Building, Floor, Room)"
-              required
             />
           </div>
 
@@ -172,12 +169,10 @@ const AddRoom = () => {
               id="amenities"
               name="amenities"
               className="border rounded w-full py-2 px-3"
-              placeholder="Amenities CSV (projector, whiteboard, etc.)"
-              required
+              placeholder="projector, whiteboard, etc..."
             />
           </div>
-          {/* 
-          <!-- Image Upload --> */}
+          {/*<!-- Image Upload --> */}
           <div className="mb-8">
             <label
               htmlFor="image"

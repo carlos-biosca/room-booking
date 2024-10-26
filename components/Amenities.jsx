@@ -19,10 +19,10 @@ const icons = {
   "Lighting Equipment": <RiFlashlightFill />
 };
 
-const Facilities = ({ amenities }) => {
+const Amenities = ({ amenities }) => {
   return (
     <>
-      <h2 className="text-xl font-bold mb-2">Facilities</h2>
+      <h2 className="text-xl font-bold mb-2">Amenities</h2>
       <ul className="flex flex-wrap gap-4">
         {amenities.length > 0
           ? amenities.map((item, index) => {
@@ -42,4 +42,4 @@ const Facilities = ({ amenities }) => {
   );
 };
 
-export default Facilities;
+export default Amenities;

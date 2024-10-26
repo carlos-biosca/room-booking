@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 import BookForm from "@/components/BookForm";
-import Facilities from "@/components/Facilities";
+import Amenities from "@/components/Amenities";
 import Description from "@/components/Description";
 import getRoom from "@/app/actions/getRoom";
 
@@ -47,7 +47,7 @@ const RoomPage = async ({ params }) => {
           <div className="grid md:grid-cols-5 px-2 sm:px-0 gap-6">
             <div className="md:col-span-3">
               <Description room={room} />
-              {room.amenities ? <Facilities amenities={amenities} /> : null}
+              {room.amenities ? <Amenities amenities={amenities} /> : null}
             </div>
             <BookForm />
           </div>

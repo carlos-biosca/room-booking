@@ -36,7 +36,7 @@ async function addRoom (previousState, formData) {
         user_id: user.id,
         name: formData.get("name"),
         description: formData.get("description"),
-        sqft: formData.get("sqft"),
+        sqmt: formData.get("sqmt"),
         capacity: formData.get("capacity"),
         location: formData.get("location"),
         address: formData.get("address"),
