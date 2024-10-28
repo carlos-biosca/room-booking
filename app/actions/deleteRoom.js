@@ -14,7 +14,7 @@ async function deleteRoom (id) {
   }
 
   try {
-    const { account, databases } = await createSessionClient(sessionCookie.value)
+    const { account, databases, storage } = await createSessionClient(sessionCookie.value)
     const user = await account.get()
     const userId = user.$id
     const { documents: rooms } = await databases.listDocuments(
@@ -29,6 +29,10 @@ async function deleteRoom (id) {
         process.env.NEXT_PUBLIC_APPWRITE_DATABASE,
         process.env.NEXT_PUBLIC_APPWRITE_ROOMS,
         findRoom.$id
+      )
+      await storage.deleteFile(
+        process.env.NEXT_PUBLIC_APPWRITE_IMAGES,
+        findRoom.image
       )
       revalidatePath('/rooms/user', 'layout')
       revalidatePath('/', 'layout')
