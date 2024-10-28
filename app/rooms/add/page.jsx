@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 
 import Heading from "@/components/Heading";
 import addRoom from "@/app/actions/addRoom";
+import AmenitiesOptions from "@/components/AmenitiesOptions";
 
 const AddRoom = () => {
   const [state, formAction] = useFormState(addRoom, {});
@@ -157,21 +158,8 @@ const AddRoom = () => {
             />
           </div>
 
-          <div className="mb-4">
-            <label
-              htmlFor="amenities"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Amenities
-            </label>
-            <input
-              type="text"
-              id="amenities"
-              name="amenities"
-              className="border rounded w-full py-2 px-3"
-              placeholder="projector, whiteboard, etc..."
-            />
-          </div>
+          <AmenitiesOptions />
+
           {/*<!-- Image Upload --> */}
           <div className="mb-8">
             <label

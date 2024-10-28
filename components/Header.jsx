@@ -4,11 +4,14 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
-import { FaSignOutAlt, FaBuilding } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 import destroySession from "@/app/actions/destroySession";
 import { useUser } from "@/context/userContext";
+
+const baseClasses = "rounded-md px-3 py-2 text-sm font-medium";
+const activeClasses = "text-gray-800 hover:bg-gray-700 hover:text-white";
+const disabledClasses = "text-gray-400";
 
 const Header = () => {
   const router = useRouter();
@@ -22,10 +25,6 @@ const Header = () => {
     }
     toast.error(error);
   };
-
-  const baseClasses = "rounded-md px-3 py-2 text-sm font-medium";
-  const activeClasses = "text-gray-800 hover:bg-gray-700 hover:text-white";
-  const disabledClasses = "text-gray-400";
 
   return (
     <header>
