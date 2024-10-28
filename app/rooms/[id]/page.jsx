@@ -6,6 +6,7 @@ import BookForm from "@/components/BookForm";
 import Amenities from "@/components/Amenities";
 import Description from "@/components/Description";
 import getRoom from "@/app/actions/getRoom";
+import GoBackButton from "@/components/GoBackButton";
 
 const RoomPage = async ({ params }) => {
   const { id } = params;
@@ -24,13 +25,7 @@ const RoomPage = async ({ params }) => {
 
   return (
     <>
-      <Link
-        href="/"
-        className="flex items-center text-gray-600 hover:text-gray-800 mb-4"
-      >
-        <FaChevronLeft className="inline mr-1" />
-        <span className="ml-2">Back to Main</span>
-      </Link>
+      <GoBackButton />
       <Heading title={room.name} />
       <div className="bg-white">
         <div className="flex flex-col">
