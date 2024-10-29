@@ -10,7 +10,7 @@ export default async function Home() {
       {rooms.length > 0 ? (
         rooms.map(room => <RoomCard key={room.$id} room={room} />)
       ) : (
-        <h1>no rooms</h1>
+        <p className="text-center my-12">The list is empty</p>
       )}
     </>
   );

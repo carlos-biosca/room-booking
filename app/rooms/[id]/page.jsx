@@ -44,7 +44,7 @@ const RoomPage = async ({ params }) => {
               <Description room={room} />
               {room.amenities ? <Amenities amenities={amenities} /> : null}
             </div>
-            <BookForm />
+            <BookForm room={room} />
           </div>
         </div>
       </div>

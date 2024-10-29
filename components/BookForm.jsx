@@ -1,7 +1,8 @@
-const BookForm = () => {
+const BookForm = ({ room }) => {
   return (
     <form className="max-h-max p-4 border-2 rounded-xl md:col-span-2">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <input type="hidden" name="room_id" value={room.$id} />
         <div>
           <label
             htmlFor="check_in_date"
