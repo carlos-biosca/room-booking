@@ -1,6 +1,28 @@
+"use client";
+
+import { useEffect } from "react";
+import { useFormState } from "react-dom";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import bookRoom from "@/app/actions/bookRoom";
+
 const BookForm = ({ room }) => {
+  const [state, formAction] = useFormState(bookRoom, {});
+  const router = useRouter();
+
+  useEffect(() => {
+    if (state.error) toast.error(state.error);
+    if (state.success) {
+      toast.success("Booking completed!");
+      router.push("/bookings");
+    }
+  }, [state]);
+
   return (
-    <form className="max-h-max p-4 border-2 rounded-xl md:col-span-2">
+    <form
+      action={formAction}
+      className="max-h-max p-4 border-2 rounded-xl md:col-span-2"
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <input type="hidden" name="room_id" value={room.$id} />
         <div>

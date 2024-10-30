@@ -5,6 +5,7 @@ import { cookies } from "next/headers"
 import { ID } from "node-appwrite"
 import { redirect } from "next/navigation"
 import checkUser from "./checkUser"
+import { revalidatePath } from "next/cache"
 
 async function bookRoom (previousState, formData) {
   const sessionCookie = cookies().get('app-session')
@@ -35,7 +36,7 @@ async function bookRoom (previousState, formData) {
     const bookingData = {
       check_in: checkInDateTime,
       check_out: checkOutDateTime,
-      user_id: user.id,
+      user_id: user.user.id,
       room_id: roomId,
     };
 

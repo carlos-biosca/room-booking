@@ -1,7 +1,5 @@
 import Heading from "@/components/Heading";
 import Image from "next/image";
-import Link from "next/link";
-import { FaChevronLeft } from "react-icons/fa";
 import BookForm from "@/components/BookForm";
 import Amenities from "@/components/Amenities";
 import Description from "@/components/Description";
