@@ -20,7 +20,7 @@ const DeleteButton = ({ id }) => {
   return (
     <button
       onClick={handleDelete}
-      className="px-4 py-3 rounded mb-2 sm:mb-0 w-full sm:w-auto text-center bg-red-500 text-white  hover:bg-red-400 "
+      className="px-4 py-3 rounded mb-2 sm:mb-0 w-full sm:w-auto text-center bg-red-500 text-white hover:bg-red-400"
     >
       Delete
     </button>
