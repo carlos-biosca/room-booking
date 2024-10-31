@@ -39,24 +39,14 @@ const Header = () => {
                 Available Rooms
               </Link>
               {/*Logged In */}
-              <>
-                <Link
-                  href="/bookings"
-                  className={`${baseClasses} ${
-                    isAuth ? activeClasses : disabledClasses
-                  }`}
-                >
-                  Bookings
-                </Link>
-                <Link
-                  href="/rooms/add"
-                  className={`${baseClasses} ${
-                    isAuth ? activeClasses : disabledClasses
-                  }`}
-                >
-                  Add Room
-                </Link>
-              </>
+              <Link
+                href="/rooms/add"
+                className={`${baseClasses} ${
+                  isAuth ? activeClasses : disabledClasses
+                }`}
+              >
+                Add Room
+              </Link>
             </div>
           </div>
           {/*Right Menu */}
@@ -70,6 +60,12 @@ const Header = () => {
                     className="flex items-center mr-5 text-gray-800 hover:text-gray-600 hover:underline"
                   >
                     My Rooms
+                  </Link>
+                  <Link
+                    href="/bookings"
+                    className="flex items-center mr-5 text-gray-800 hover:text-gray-600 hover:underline"
+                  >
+                    Bookings
                   </Link>
                   <button
                     onClick={handleLogout}
@@ -110,24 +106,14 @@ const Header = () => {
             Rooms
           </Link>
           {/*Logged In */}
-          <>
-            <Link
-              href="/bookings"
-              className={`${baseClasses} block ${
-                isAuth ? activeClasses : disabledClasses
-              }`}
-            >
-              Bookings
-            </Link>
-            <Link
-              href="/rooms/add"
-              className={`${baseClasses} block ${
-                isAuth ? activeClasses : disabledClasses
-              }`}
-            >
-              Add Room
-            </Link>
-          </>
+          <Link
+            href="/rooms/add"
+            className={`${baseClasses} block ${
+              isAuth ? activeClasses : disabledClasses
+            }`}
+          >
+            Add Room
+          </Link>
         </div>
       </div>
     </header>
