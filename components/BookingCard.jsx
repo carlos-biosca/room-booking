@@ -1,5 +1,6 @@
 import Link from "next/link";
 import formatDate from "@/app/helpers/formatDate";
+import CancelButton from "./CancelButton";
 
 const BookingCard = ({ booking }) => {
   const { room_id, check_in, check_out } = booking;
@@ -22,9 +23,7 @@ const BookingCard = ({ booking }) => {
         >
           View Room
         </Link>
-        <button className="px-4 py-3 rounded w-full text-center bg-red-500 text-white hover:bg-red-400">
-          Cancel Booking
-        </button>
+        <CancelButton bookingId={booking.$id} />
       </div>
     </div>
   );

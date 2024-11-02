@@ -5,7 +5,7 @@ import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import { revalidatePath } from "next/cache"
 
-async function getUserRooms (bookingId) {
+async function cancelBooking (bookingId) {
   const sessionCookie = cookies().get('app-session')
 
   if (!sessionCookie) {
@@ -45,4 +45,4 @@ async function getUserRooms (bookingId) {
   }
 }
 
-export default getUserRooms
+export default cancelBooking
