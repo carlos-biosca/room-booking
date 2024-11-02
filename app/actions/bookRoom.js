@@ -16,7 +16,7 @@ async function bookRoom (previousState, formData) {
 
   try {
     const { databases } = await createSessionClient(sessionCookie.value)
-    const user = await checkUser()
+    const { user } = await checkUser()
 
     if (!user) {
       return {
@@ -36,7 +36,7 @@ async function bookRoom (previousState, formData) {
     const bookingData = {
       check_in: checkInDateTime,
       check_out: checkOutDateTime,
-      user_id: user.user.id,
+      user_id: user.id,
       room_id: roomId,
     };
 
