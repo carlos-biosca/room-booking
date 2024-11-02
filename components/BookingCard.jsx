@@ -1,5 +1,5 @@
 import Link from "next/link";
-import formatDate from "@/app/helpers/formatDate";
+import formatDate from "@/helpers/formatDate";
 import CancelButton from "./CancelButton";
 
 const BookingCard = ({ booking }) => {

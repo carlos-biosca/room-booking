@@ -6,6 +6,7 @@ import { ID } from "node-appwrite"
 import { redirect } from "next/navigation"
 import checkUser from "./checkUser"
 import { revalidatePath } from "next/cache"
+import checkRoomAvailability from "./checkRoomAvailability"
 
 async function bookRoom (previousState, formData) {
   const sessionCookie = cookies().get('app-session')
@@ -33,6 +34,14 @@ async function bookRoom (previousState, formData) {
     const checkInDateTime = `${checkInDate}T${checkInTime}`;
     const checkOutDateTime = `${checkOutDate}T${checkOutTime}`;
 
+    //Check availability
+    const isAvailableToBook = await checkRoomAvailability(roomId, checkInDateTime, checkOutDateTime)
+    if (!isAvailableToBook) {
+      return {
+        error: 'The room is not available at this time!'
+      }
+    }
+
     const bookingData = {
       check_in: checkInDateTime,
       check_out: checkOutDateTime,
@@ -55,9 +64,9 @@ async function bookRoom (previousState, formData) {
     };
 
   } catch (err) {
-    console.log('Failed to book room:', err);
+    console.log(err);
     return {
-      error: ''
+      error: 'Failed to book room'
     }
   }
 }

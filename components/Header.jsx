@@ -103,7 +103,7 @@ const Header = () => {
             href="/"
             className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
           >
-            Rooms
+            Available Rooms
           </Link>
           {/*Logged In */}
           <Link
