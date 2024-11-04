@@ -36,6 +36,12 @@ const Header = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <Link href="/" className={`${baseClasses} ${activeClasses}`}>
+                Home
+              </Link>
+              <Link
+                href="/rooms/list"
+                className={`${baseClasses} ${activeClasses}`}
+              >
                 Available Rooms
               </Link>
               {/*Logged In */}
