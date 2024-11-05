@@ -39,14 +39,13 @@ async function addRoom (previousState, formData) {
         sqmt: formData.get("sqmt"),
         capacity: formData.get("capacity"),
         location: formData.get("location"),
-        address: formData.get("address"),
         availability: formData.get("availability"),
         price_per_hour: formData.get("price_per_hour"),
         amenities: formData.get("amenities"),
         image: imageID
       }
     )
-    revalidatePath('/', 'layout')
+    revalidatePath('/rooms/list', 'layout')
 
     return {
       success: true

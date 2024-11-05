@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HomeGallery = () => {
   return (
-    <section className="h-auto md:h-[40vh] lg:h-[60vh] grid grid-cols-4 grid-rows-2 gap-5">
+    <section className="h-auto md:h-[40vh] xl:h-[60vh] grid grid-cols-4 grid-rows-2 gap-5">
       <Image
         className="h-full w-auto col-span-4 md:col-span-3 lg:col-span-2 row-span-2 object-cover rounded-3xl"
         src="/images/benjamin-child-GWe0dlVD9e0-unsplash.jpg"

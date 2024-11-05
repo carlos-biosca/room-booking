@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import Heading from "@/components/Heading";
 import addRoom from "@/app/actions/addRoom";
 import AmenitiesOptions from "@/components/AmenitiesOptions";
+import ImageUploader from "@/components/ImageUploader";
 
 const AddRoom = () => {
   const [state, formAction] = useFormState(addRoom, {});
@@ -17,7 +18,7 @@ const AddRoom = () => {
     if (state?.error) toast.error(state.error);
     if (state?.success) {
       toast.success("Room added successfully");
-      router.push("/");
+      router.push("/rooms/list");
     }
   }, [state]);
 
@@ -110,23 +111,6 @@ const AddRoom = () => {
 
           <div className="mb-4">
             <label
-              htmlFor="address"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Address
-            </label>
-            <input
-              type="text"
-              id="address"
-              name="address"
-              className="border rounded w-full py-2 px-3"
-              placeholder="Enter full address"
-              required
-            />
-          </div>
-
-          <div className="mb-4">
-            <label
               htmlFor="location"
               className="block text-gray-700 font-bold mb-2"
             >
@@ -138,6 +122,7 @@ const AddRoom = () => {
               name="location"
               className="border rounded w-full py-2 px-3"
               placeholder="Location (Building, Floor, Room)"
+              required
             />
           </div>
 
@@ -159,23 +144,7 @@ const AddRoom = () => {
           </div>
 
           <AmenitiesOptions />
-
-          {/*<!-- Image Upload --> */}
-          <div className="mb-8">
-            <label
-              htmlFor="image"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Image
-            </label>
-
-            <input
-              type="file"
-              id="image"
-              name="image"
-              className="border rounded w-full py-2 px-3"
-            />
-          </div>
+          <ImageUploader />
 
           <div className="flex flex-col gap-5">
             <button
