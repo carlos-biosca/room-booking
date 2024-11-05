@@ -36,9 +36,9 @@ async function bookRoom (previousState, formData) {
 
     //Check availability
     const isAvailableToBook = await checkRoomAvailability(roomId, checkInDateTime, checkOutDateTime)
-    if (!isAvailableToBook) {
+    if (typeof isAvailableToBook === "string") {
       return {
-        error: 'The room is not available at this time!'
+        error: isAvailableToBook
       }
     }
 
