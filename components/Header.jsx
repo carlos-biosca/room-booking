@@ -61,18 +61,20 @@ const Header = () => {
               {isAuth ? (
                 <>
                   {/*Logged In */}
-                  <Link
-                    href="/rooms/user"
-                    className="flex items-center mr-5 text-gray-800 hover:text-gray-600 hover:underline"
-                  >
-                    My Rooms
-                  </Link>
-                  <Link
-                    href="/bookings"
-                    className="flex items-center mr-5 text-gray-800 hover:text-gray-600 hover:underline"
-                  >
-                    Bookings
-                  </Link>
+                  <div className="hidden md:flex">
+                    <Link
+                      href="/rooms/user"
+                      className="flex items-center mr-5 text-gray-800 hover:text-gray-600 hover:underline"
+                    >
+                      My Rooms
+                    </Link>
+                    <Link
+                      href="/bookings"
+                      className="flex items-center mr-5 text-gray-800 hover:text-gray-600 hover:underline"
+                    >
+                      Bookings
+                    </Link>
+                  </div>
                   <button
                     onClick={handleLogout}
                     className="flex items-center text-gray-800 hover:text-gray-600 hover:underline"
@@ -109,17 +111,37 @@ const Header = () => {
             href="/"
             className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
           >
+            Home
+          </Link>
+          <Link
+            href="/rooms/list"
+            className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
+          >
             Available Rooms
           </Link>
           {/*Logged In */}
           <Link
             href="/rooms/add"
-            className={`${baseClasses} block ${
-              isAuth ? activeClasses : disabledClasses
-            }`}
+            className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
           >
             Add Room
           </Link>
+          {isAuth ? (
+            <>
+              <Link
+                href="/rooms/user"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
+              >
+                My Rooms
+              </Link>
+              <Link
+                href="/bookings"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
+              >
+                Bookings
+              </Link>
+            </>
+          ) : null}
         </div>
       </div>
     </header>
