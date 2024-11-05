@@ -37,8 +37,8 @@ const RoomPage = async ({ params }) => {
             />
           </div>
 
-          <div className="grid md:grid-cols-5 px-2 sm:px-0 gap-6">
-            <div className="md:col-span-3">
+          <div className="grid lg:grid-cols-5 px-2 sm:px-0 gap-6">
+            <div className="lg:col-span-3">
               <Description room={room} />
               {room.amenities ? <Amenities amenities={amenities} /> : null}
             </div>

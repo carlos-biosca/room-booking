@@ -5,7 +5,6 @@ const Description = ({ room }) => {
     availability,
     capacity,
     price_per_hour,
-    address,
     location
   } = room;
   return (
@@ -20,6 +19,10 @@ const Description = ({ room }) => {
           </li>
         ) : null}
         <li>
+          <span className="font-semibold text-gray-800">Location:</span>{" "}
+          {location}
+        </li>
+        <li>
           <span className="font-semibold text-gray-800">Availability:</span>{" "}
           {availability}
         </li>
@@ -33,16 +36,6 @@ const Description = ({ room }) => {
           <span className="font-semibold text-gray-800">Price:</span> $
           {price_per_hour}/hour
         </li>
-        <li>
-          <span className="font-semibold text-gray-800">Address:</span>{" "}
-          {address}
-        </li>
-        {location ? (
-          <li>
-            <span className="font-semibold text-gray-800">Location:</span>{" "}
-            {location}
-          </li>
-        ) : null}
       </ul>
     </>
   );
