@@ -6,6 +6,8 @@ import Description from "@/components/Description";
 import getRoom from "@/app/actions/getRoom";
 import GoBackButton from "@/components/GoBackButton";
 
+import defaultImage from "@/public/images/default-image.jpg";
+
 const RoomPage = async ({ params }) => {
   const { id } = params;
   const room = await getRoom(id);
@@ -19,7 +21,7 @@ const RoomPage = async ({ params }) => {
   const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT;
 
   const imageUrl = `${endpoint}/storage/buckets/${bucketId}/files/${room.image}/view?project=${projectId}`;
-  const imageSrc = room.image ? imageUrl : "/images/default-image.jpg";
+  const imageSrc = room.image ? imageUrl : defaultImage;
 
   return (
     <>
