@@ -12,7 +12,7 @@ async function getAllRooms () {
       process.env.NEXT_PUBLIC_APPWRITE_ROOMS
     )
     revalidatePath('/', 'layout')
-    return rooms
+    return rooms.reverse()
   } catch (err) {
     console.log('get rooms error:', err);
     redirect('/error')

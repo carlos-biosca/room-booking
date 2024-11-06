@@ -34,32 +34,32 @@ const ImageUploader = () => {
           onChange={handleImageChange}
         />
         <label
-          className="block sm:inline-block bg-gray-700 text-white px-4 py-3 sm:py-2 rounded w-auto text-center hover:bg-gray-500"
+          className="inline-block bg-gray-700 text-white px-4 py-2 rounded w-auto text-center hover:bg-gray-500"
           htmlFor="image"
         >
           Choose Image
         </label>
         {image ? (
-          <p className="flex items-center gap-2">
-            <span>{image.name}</span>
-            <TiDelete
-              onClick={handleImageDelete}
-              className="h-7 w-7 text-red-500 mt-[2px] cursor-pointer"
-            />
-          </p>
+          <TiDelete
+            onClick={handleImageDelete}
+            className="h-10 w-10 mt-[2px] text-red-500 border border-red-500 px-1 cursor-pointer"
+          />
         ) : (
           "No image selected"
         )}
       </div>
       {image ? (
-        <div className="h-32 md:h-96 w-auto mt-4 relative">
-          <Image
-            src={image.file}
-            fill
-            className="object-cover"
-            alt={image.name}
-          />
-        </div>
+        <>
+          <div className="h-32 md:h-96 w-auto mt-4 relative">
+            <Image
+              src={image.file}
+              fill
+              className="object-cover"
+              alt={image.name}
+            />
+          </div>
+          <p className="truncate overflow-hidden">{image.name}</p>
+        </>
       ) : null}
     </div>
   );
