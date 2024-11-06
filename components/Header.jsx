@@ -12,6 +12,8 @@ import { useUser } from "@/context/userContext";
 const baseClasses = "rounded-md px-3 py-2 text-sm font-medium";
 const activeClasses = "text-gray-800 hover:bg-gray-700 hover:text-white";
 const disabledClasses = "text-gray-400";
+const mobileClasses =
+  "block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
 
 const Header = () => {
   const router = useRouter();
@@ -34,7 +36,7 @@ const Header = () => {
             <Image className="h-12 w-auto" src={logo} alt="R" priority />
           </Link>
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="flex items-baseline space-x-1">
               <Link href="/" className={`${baseClasses} ${activeClasses}`}>
                 Home
               </Link>
@@ -55,49 +57,38 @@ const Header = () => {
               </Link>
             </div>
           </div>
+
           {/*Right Menu */}
           <div>
             <div className="ml-4 flex items-center md:ml-6">
               {isAuth ? (
-                <>
-                  {/*Logged In */}
-                  <div className="hidden md:flex">
-                    <Link
-                      href="/rooms/user"
-                      className="flex items-center mr-5 text-gray-800 hover:text-gray-600 hover:underline"
-                    >
-                      My Rooms
-                    </Link>
-                    <Link
-                      href="/bookings"
-                      className="flex items-center mr-5 text-gray-800 hover:text-gray-600 hover:underline"
-                    >
-                      Bookings
-                    </Link>
-                  </div>
+                <div className="hidden md:flex items-center">
+                  <Link
+                    href="/rooms/user"
+                    className="mr-3 text-sm font-medium text-gray-800 hover:text-gray-600 hover:underline"
+                  >
+                    My Rooms
+                  </Link>
+                  <Link
+                    href="/bookings"
+                    className="mr-3 text-sm font-medium text-gray-800 hover:text-gray-600 hover:underline"
+                  >
+                    Bookings
+                  </Link>
                   <button
                     onClick={handleLogout}
-                    className="flex items-center text-gray-800 hover:text-gray-600 hover:underline"
+                    className="block sm:inline-block bg-gray-700 text-white px-4 py-2 rounded w-full sm:w-auto text-center hover:bg-gray-500"
                   >
                     Logout
                   </button>
-                </>
+                </div>
               ) : (
-                <>
-                  {/*Logged Out */}
-                  <Link
-                    href="/login"
-                    className="flex items-center mr-5 text-gray-800 hover:text-gray-600 hover:underline"
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    href="/register"
-                    className="flex items-center text-gray-800 hover:text-gray-600 hover:underline"
-                  >
-                    Register
-                  </Link>
-                </>
+                <Link
+                  href="/login"
+                  className="block sm:inline-block bg-gray-700 text-white px-4 py-2 rounded w-full sm:w-auto text-center hover:bg-gray-500"
+                >
+                  Login
+                </Link>
               )}
             </div>
           </div>
@@ -107,39 +98,37 @@ const Header = () => {
       {/*Mobile */}
       <div className="md:hidden">
         <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-          <Link
-            href="/"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
-          >
+          <Link href="/" className={`${mobileClasses}`}>
             Home
           </Link>
-          <Link
-            href="/rooms/list"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
-          >
+          <Link href="/rooms/list" className={`${mobileClasses}`}>
             Available Rooms
           </Link>
           {/*Logged In */}
           <Link
             href="/rooms/add"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
+            className={`block rounded-md px-3 py-2 text-base font-medium ${
+              isAuth
+                ? "text-gray-800 hover:bg-gray-700 hover:text-white"
+                : disabledClasses
+            }`}
           >
             Add Room
           </Link>
           {isAuth ? (
             <>
-              <Link
-                href="/rooms/user"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
-              >
+              <Link href="/rooms/user" className={`${mobileClasses}`}>
                 My Rooms
               </Link>
-              <Link
-                href="/bookings"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
-              >
+              <Link href="/bookings" className={`${mobileClasses}`}>
                 Bookings
               </Link>
+              <button
+                onClick={handleLogout}
+                className={`${mobileClasses} w-full text-left`}
+              >
+                Logout
+              </button>
             </>
           ) : null}
         </div>

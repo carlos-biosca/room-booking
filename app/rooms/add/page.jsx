@@ -25,7 +25,7 @@ const AddRoom = () => {
   return (
     <>
       <Heading title="Add a room" />
-      <div className="bg-white border rounded-lg p-6 w-full">
+      <div className="bg-white border rounded-lg p-3 md:p-6 w-full">
         <form action={formAction}>
           <div className="mb-4">
             <label
