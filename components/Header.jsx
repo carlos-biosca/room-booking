@@ -5,19 +5,25 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
 import { toast } from "react-toastify";
+import { useState } from "react";
+import { IoMenu } from "react-icons/io5";
 
 import destroySession from "@/app/actions/destroySession";
 import { useUser } from "@/context/userContext";
+import MenuMobile from "./MenuMobile";
 
 const baseClasses = "rounded-md px-3 py-2 text-sm font-medium";
 const activeClasses = "text-gray-800 hover:bg-gray-700 hover:text-white";
 const disabledClasses = "text-gray-400";
-const mobileClasses =
-  "block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
 
 const Header = () => {
   const router = useRouter();
   const { isAuth, setIsAuth } = useUser();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleLogout = async () => {
     const { success, error } = await destroySession();
@@ -46,7 +52,6 @@ const Header = () => {
               >
                 Available Rooms
               </Link>
-              {/*Logged In */}
               <Link
                 href="/rooms/add"
                 className={`${baseClasses} ${
@@ -77,7 +82,7 @@ const Header = () => {
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="block sm:inline-block bg-gray-700 text-white px-4 py-2 rounded w-full sm:w-auto text-center hover:bg-gray-500"
+                    className="block sm:inline-block bg-gray-700 text-white px-4 py-2 rounded w-auto text-center hover:bg-gray-500"
                   >
                     Logout
                   </button>
@@ -85,54 +90,29 @@ const Header = () => {
               ) : (
                 <Link
                   href="/login"
-                  className="block sm:inline-block bg-gray-700 text-white px-4 py-2 rounded w-full sm:w-auto text-center hover:bg-gray-500"
+                  className="block sm:inline-block bg-gray-700 text-white px-4 py-2 rounded w-auto text-center hover:bg-gray-500"
                 >
                   Login
                 </Link>
               )}
+              <button
+                className="block md:hidden ml-3 px-1 border border-gray-800"
+                onClick={toggleMenu}
+              >
+                <IoMenu size={36} />
+              </button>
             </div>
           </div>
         </div>
       </nav>
 
       {/*Mobile */}
-      <div className="md:hidden">
-        <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-          <Link href="/" className={`${mobileClasses}`}>
-            Home
-          </Link>
-          <Link href="/rooms/list" className={`${mobileClasses}`}>
-            Available Rooms
-          </Link>
-          {/*Logged In */}
-          <Link
-            href="/rooms/add"
-            className={`block rounded-md px-3 py-2 text-base font-medium ${
-              isAuth
-                ? "text-gray-800 hover:bg-gray-700 hover:text-white"
-                : disabledClasses
-            }`}
-          >
-            Add Room
-          </Link>
-          {isAuth ? (
-            <>
-              <Link href="/rooms/user" className={`${mobileClasses}`}>
-                My Rooms
-              </Link>
-              <Link href="/bookings" className={`${mobileClasses}`}>
-                Bookings
-              </Link>
-              <button
-                onClick={handleLogout}
-                className={`${mobileClasses} w-full text-left`}
-              >
-                Logout
-              </button>
-            </>
-          ) : null}
-        </div>
-      </div>
+      <MenuMobile
+        isOpen={isOpen}
+        isAuth={isAuth}
+        toggleMenu={toggleMenu}
+        handleLogout={handleLogout}
+      />
     </header>
   );
 };
