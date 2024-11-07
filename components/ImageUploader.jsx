@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { TiDelete } from "react-icons/ti";
 import Image from "next/image";
+import defaultImage from "@/public/images/default-image.jpg";
 
 const ImageUploader = () => {
   const [image, setImage] = useState(null);
@@ -24,7 +25,7 @@ const ImageUploader = () => {
   return (
     <div className="mb-8">
       <p className="block text-gray-700 font-bold mb-2">Image</p>
-      <div className="flex items-center gap-5">
+      <div className="flex justify-between items-center">
         <input
           type="file"
           id="image"
@@ -46,25 +47,23 @@ const ImageUploader = () => {
             onClick={handleImageDelete}
           >
             <TiDelete className="h-8 w-8 mx-1" />
-            <span>Remove</span>
+            <span>Remove Image</span>
           </button>
-        ) : (
-          "No image selected"
-        )}
+        ) : null}
       </div>
-      {image ? (
-        <>
-          <div className="h-32 md:h-96 w-auto mt-4 relative">
-            <Image
-              src={image.file}
-              fill
-              className="object-cover"
-              alt={image.name}
-            />
-          </div>
-          <p className="truncate overflow-hidden">{image.name}</p>
-        </>
-      ) : null}
+      <>
+        <div className="h-32 md:h-96 w-auto mt-4 relative">
+          <Image
+            src={image ? image?.file : defaultImage}
+            fill
+            className="object-cover"
+            alt={image ? image?.name : "empty room image"}
+          />
+        </div>
+        <p className="h-6 truncate overflow-hidden">
+          {image ? image.name : null}
+        </p>
+      </>
     </div>
   );
 };
