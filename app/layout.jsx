@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
             {children}
           </main>
           <Footer />
-          <ToastContainer position="bottom-center" hideProgressBar />
+          <ToastContainer position="top-center" hideProgressBar />
         </body>
       </html>
     </ContextWrapper>

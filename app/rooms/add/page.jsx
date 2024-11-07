@@ -17,7 +17,7 @@ const AddRoom = () => {
   useEffect(() => {
     if (state?.error) toast.error(state.error);
     if (state?.success) {
-      toast.success("Room added successfully");
+      toast.success("Room added successfully!");
       router.push("/rooms/list");
     }
   }, [state]);

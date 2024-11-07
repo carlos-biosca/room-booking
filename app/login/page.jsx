@@ -17,7 +17,7 @@ const Login = () => {
     if (state?.error) toast.error(state.error);
     if (state?.success) {
       setIsAuth(true);
-      toast.success("Login success");
+      toast.success("Login success!");
       router.push("/rooms/add");
     }
   }, [state]);
