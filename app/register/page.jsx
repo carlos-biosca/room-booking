@@ -40,6 +40,7 @@ const Register = () => {
               id="name"
               name="name"
               className="border rounded w-full py-2 px-3"
+              placeholder="user name"
               required
             />
           </div>
@@ -56,6 +57,7 @@ const Register = () => {
               id="email"
               name="email"
               className="border rounded w-full py-2 px-3"
+              placeholder="name@mail.com"
               required
             />
           </div>
@@ -72,6 +74,7 @@ const Register = () => {
               id="password"
               name="password"
               className="border rounded w-full py-2 px-3"
+              placeholder="minimum 8 characters"
               required
             />
           </div>
@@ -88,6 +91,7 @@ const Register = () => {
               id="confirm"
               name="confirm"
               className="border rounded w-full py-2 px-3"
+              placeholder="minimum 8 characters"
               required
             />
           </div>

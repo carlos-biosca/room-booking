@@ -25,11 +25,12 @@ async function checkRoomAvailability (roomId, checkIn, checkOut) {
     const checkInDate = dateToUTC(checkIn)
     const checkOutDate = dateToUTC(checkOut)
 
+    if (checkInDate > checkOutDate) return "Dates are not valid!"
+
     for (const booking of bookings) {
       const bookingCheckInDate = dateToUTC(booking.check_in)
       const bookingCheckOutDate = dateToUTC(booking.check_out)
 
-      if (checkInDate > checkOutDate) return "Dates are not valid!"
       if (checkInDate < bookingCheckOutDate && checkOutDate > bookingCheckInDate) return 'Not available at this time!'
     }
 

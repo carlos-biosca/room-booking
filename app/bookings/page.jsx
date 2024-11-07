@@ -9,7 +9,7 @@ const Bookings = async () => {
     <>
       <Heading title="Bookings" />
       {bookings.length > 0 ? (
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-4">
           {bookings.map(booking => {
             return <BookingCard key={booking.$id} booking={booking} />;
           })}

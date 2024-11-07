@@ -25,7 +25,7 @@ const RoomCard = ({ room }) => {
         </div>
         <div className="p-2 sm:space-y-2 lg:w-1/3 sm:px-6">
           <div className="p-4 sm:p-0">
-            <h4 className="text-xl sm:text-2xl font-bold">{room.name}</h4>
+            <h2 className="text-xl sm:text-2xl font-bold">{room.name}</h2>
             <p className="sm:text-lg text-gray-600">
               <span className="font-semibold text-gray-800"> Location: </span>
               {room.location}

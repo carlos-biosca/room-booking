@@ -42,6 +42,7 @@ const Login = () => {
               id="email"
               name="email"
               className="border rounded w-full py-2 px-3"
+              placeholder="name@mail.com"
               required
             />
           </div>
@@ -58,6 +59,7 @@ const Login = () => {
               id="password"
               name="password"
               className="border rounded w-full py-2 px-3"
+              placeholder="account password"
               required
             />
           </div>

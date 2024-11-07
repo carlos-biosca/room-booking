@@ -40,10 +40,14 @@ const ImageUploader = () => {
           Choose Image
         </label>
         {image ? (
-          <TiDelete
+          <button
+            className="flex items-center text-red-500 border border-red-500 py-1 pr-2 cursor-pointer rounded"
+            type="button"
             onClick={handleImageDelete}
-            className="h-10 w-10 mt-[2px] text-red-500 border border-red-500 px-1 cursor-pointer"
-          />
+          >
+            <TiDelete className="h-8 w-8 mx-1" />
+            <span>Remove</span>
+          </button>
         ) : (
           "No image selected"
         )}

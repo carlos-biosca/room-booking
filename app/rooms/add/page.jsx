@@ -39,7 +39,7 @@ const AddRoom = () => {
               id="name"
               name="name"
               className="border rounded w-full py-2 px-3"
-              placeholder="Enter a name"
+              placeholder="Enter room name"
               required
             />
           </div>
@@ -151,7 +151,7 @@ const AddRoom = () => {
               type="submit"
               className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-500"
             >
-              Save
+              Add Room
             </button>
           </div>
         </form>
