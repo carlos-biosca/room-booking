@@ -12,7 +12,10 @@ const RoomCard = ({ room }) => {
   const imageSrc = room.image ? imageUrl : defaultImage;
 
   return (
-    <div className="bg-white mb-14 shadow rounded-lg sm:rounded-[20px] sm:border">
+    <Link
+      href={`/rooms/${room.$id}`}
+      className="block bg-white mb-14 shadow rounded-lg sm:rounded-[20px] sm:border"
+    >
       <div className="flex flex-col sm:flex-row sm:items-center">
         <div className="relative h-[250px] sm:h-[320px] sm:w-3/5 lg:w-2/3">
           <Image
@@ -42,15 +45,12 @@ const RoomCard = ({ room }) => {
               {room.price_per_hour}/hour
             </p>
           </div>
-          <Link
-            href={`/rooms/${room.$id}`}
-            className="block sm:inline-block bg-gray-700 text-white px-4 py-3 sm:py-2 rounded w-full sm:w-auto text-center hover:bg-gray-500"
-          >
+          <button className="block sm:inline-block bg-gray-700 text-white px-4 py-3 sm:py-2 rounded w-full sm:w-auto text-center hover:bg-gray-500">
             View Room
-          </Link>
+          </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

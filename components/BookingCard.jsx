@@ -13,10 +13,10 @@ const BookingCard = ({ booking }) => {
           <strong>Location:</strong> {room_id.location}
         </p>
         <p className="text-sm md:text-lg text-gray-600">
-          <strong>Check In Time:</strong> {formatDate(check_in)}
+          <strong>CheckIn:</strong> {formatDate(check_in)}
         </p>
         <p className="text-sm md:text-lg text-gray-600">
-          <strong>Check Out Time:</strong> {formatDate(check_out)}
+          <strong>CheckOut:</strong> {formatDate(check_out)}
         </p>
       </div>
       <div className="flex flex-col w-full gap-2 my-2 xl:my-0 xl:w-auto">
