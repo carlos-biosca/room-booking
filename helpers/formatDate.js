@@ -8,10 +8,10 @@ const formatDate = string => {
     timeZone: "UTC"
   });
 
-  const day = `${date.getUTCDate()}/${date.getUTCMonth() + 1
-    }/${date.getUTCFullYear()}`;
+  const day = date.getUTCDate();
+  const month = date.toLocaleString('es-ES', { month: 'short', year: '2-digit' }, { timeZone: 'UTC' });
 
-  return `${hour} ${day}`;
+  return `${hour} - ${day} ${month}`;
 };
 
 export default formatDate
