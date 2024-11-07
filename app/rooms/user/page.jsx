@@ -11,7 +11,7 @@ const MyRooms = async () => {
       {rooms.length > 0 ? (
         rooms.map(room => <UserRoomCard key={room.$id} room={room} />)
       ) : (
-        <p className="text-center my-12">Your room's list is empty</p>
+        <p className="text-center my-12">Your meeting room list is empty</p>
       )}
     </>
   );
