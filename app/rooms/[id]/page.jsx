@@ -25,7 +25,6 @@ const RoomPage = async ({ params }) => {
 
   return (
     <>
-      <GoBackButton />
       <Heading title={room.name} />
       <div className="bg-white">
         <div className="flex flex-col">

@@ -7,7 +7,7 @@ const GoBackButton = () => {
   const router = useRouter();
   return (
     <button
-      className="flex items-center text-gray-600 hover:text-gray-800 mb-4"
+      className="flex items-center text-gray-600 hover:text-gray-800"
       onClick={() => router.back()}
     >
       <FaChevronLeft className="inline mr-1" />
