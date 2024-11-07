@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const HomeText = () => {
   return (
-    <article className="mt-8">
+    <article className="mt-4">
       <p className="text-lg mb-4">
         <span className="text-xl text-red-600 font-bold">Rooms</span> is the
         ultimate solution for efficient meeting room management. Our intuitive
@@ -13,33 +13,32 @@ const HomeText = () => {
       <h2 className="text-xl font-semibold mb-2">Key Features</h2>
       <section className="mb-5">
         <div className="mb-4">
+          <h3 className="text-md font-semibold">Add Rooms</h3>
+          <p>
+            Share your meeting spaces and their availability. Fill the form to
+            provide the best information to all platform users.
+          </p>
+        </div>
+        <div className="mb-4">
           <h3 className="text-md font-semibold">Effortless Booking</h3>
           <p>
             Book rooms in seconds with our user-friendly interface. Check
-            real-time availability and reserve spaces with just a few taps.
+            real-time availability and reserve spaces with just a few simple
+            steps.
           </p>
         </div>
         <div className="mb-4">
-          <h3 className="text-md font-semibold">Smart Integration</h3>
+          <h3 className="text-md font-semibold">Room manage</h3>
           <p>
-            Seamlessly sync with popular calendar apps like Google Calendar and
-            Outlook to prevent double-bookings and keep your schedule
-            up-to-date.
-          </p>
-        </div>
-        <div className="mb-4">
-          <h3 className="text-md font-semibold">Resource Management</h3>
-          <p>
-            Easily manage room capacities, equipment, and amenities. Ensure
-            every meeting has the right resources at the right time.
+            Review your room list or remove the workspaces that are not
+            available anymore, and cancel all bookings scheduled.
           </p>
         </div>
         <div className="mb-4 ">
-          <h3 className="text-md font-semibold">Intelligent Analytics</h3>
+          <h3 className="text-md font-semibold">Cancel Bookings</h3>
           <p>
-            Gain valuable insights into room usage patterns with our powerful
-            reporting tools. Optimize your space allocation and improve
-            efficiency.
+            Check your booking list at any time. View the room information or
+            cancel bookings if you needed.
           </p>
         </div>
       </section>
