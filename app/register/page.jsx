@@ -7,6 +7,7 @@ import { useFormState } from "react-dom";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import createUser from "../actions/createUser";
+import SubmitButton from "@/components/SubmitButton";
 
 const Register = () => {
   const [state, formAction] = useFormState(createUser, {});
@@ -97,13 +98,7 @@ const Register = () => {
           </div>
 
           <div className="flex flex-col gap-5">
-            <button
-              type="submit"
-              className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-500"
-            >
-              Register
-            </button>
-
+            <SubmitButton text="Register" />
             <p>
               Have an account already?{" "}
               <Link href="/login" className="text-blue-500 hover:underline">

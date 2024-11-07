@@ -5,6 +5,7 @@ import { useFormState } from "react-dom";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import bookRoom from "@/app/actions/bookRoom";
+import SubmitButton from "./SubmitButton";
 
 const BookForm = ({ room }) => {
   const [state, formAction] = useFormState(bookRoom, {});
@@ -23,7 +24,7 @@ const BookForm = ({ room }) => {
       action={formAction}
       className="max-h-max p-4 border-2 rounded-xl md:col-span-2"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
         <input type="hidden" name="room_id" value={room.$id} />
         <div>
           <label
@@ -87,14 +88,7 @@ const BookForm = ({ room }) => {
         </div>
       </div>
 
-      <div className="mt-6">
-        <button
-          type="submit"
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-700 hover:bg-gray-500 focus:outline-none"
-        >
-          Book Room
-        </button>
-      </div>
+      <SubmitButton text="Book Room" />
     </form>
   );
 };

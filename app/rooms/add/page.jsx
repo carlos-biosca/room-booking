@@ -9,6 +9,7 @@ import Heading from "@/components/Heading";
 import addRoom from "@/app/actions/addRoom";
 import AmenitiesOptions from "@/components/AmenitiesOptions";
 import ImageUploader from "@/components/ImageUploader";
+import SubmitButton from "@/components/SubmitButton";
 
 const AddRoom = () => {
   const [state, formAction] = useFormState(addRoom, {});
@@ -146,14 +147,7 @@ const AddRoom = () => {
           <AmenitiesOptions />
           <ImageUploader />
 
-          <div className="flex flex-col gap-5">
-            <button
-              type="submit"
-              className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-500"
-            >
-              Add Room
-            </button>
-          </div>
+          <SubmitButton text="Add Room" />
         </form>
       </div>
     </>

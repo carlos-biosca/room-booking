@@ -7,6 +7,7 @@ import createSession from "../actions/createSession";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useUser } from "@/context/userContext";
+import SubmitButton from "@/components/SubmitButton";
 
 const Login = () => {
   const [state, formAction] = useFormState(createSession, {});
@@ -65,13 +66,7 @@ const Login = () => {
           </div>
 
           <div className="flex flex-col gap-5">
-            <button
-              type="submit"
-              className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-500"
-            >
-              Login
-            </button>
-
+            <SubmitButton text="Login" />
             <p>
               No account yet?{" "}
               <Link href="/register" className="text-blue-500 hover:underline">
