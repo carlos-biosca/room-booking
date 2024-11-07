@@ -1,6 +1,7 @@
 import getUserBookings from "../actions/getUserBookings";
 import Heading from "@/components/Heading";
 import BookingCard from "@/components/BookingCard";
+import Link from "next/link";
 
 const Bookings = async () => {
   const bookings = await getUserBookings();
@@ -15,7 +16,15 @@ const Bookings = async () => {
           })}
         </div>
       ) : (
-        <p className="text-center my-12">Your booking list is empty</p>
+        <div className="flex flex-col items-center">
+          <p className="text-center my-12">Your booking list is empty</p>
+          <Link
+            href="/rooms/list"
+            className="bg-gray-700 text-white px-4 py-3 sm:py-2 mt-4 rounded text-center hover:bg-gray-500"
+          >
+            Check Available Rooms
+          </Link>
+        </div>
       )}
     </>
   );
