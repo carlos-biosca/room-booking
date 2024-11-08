@@ -32,7 +32,7 @@ const RoomPage = async ({ params }) => {
             <Image
               src={imageSrc}
               alt={room.name}
-              className=" object-cover rounded-3xl"
+              className=" object-cover rounded-lg sm:rounded-3xl"
               fill
               priority
             />

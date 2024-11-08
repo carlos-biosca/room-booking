@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const checkUserStatus = async () => {
       const { isAuth, user } = await checkUser();
-      setIsAuth(isAuth);
+      setIsAuth({ session: isAuth });
       setUser(user)
     };
     checkUserStatus();

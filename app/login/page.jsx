@@ -17,7 +17,7 @@ const Login = () => {
   useEffect(() => {
     if (state?.error) toast.error(state.error);
     if (state?.success) {
-      setIsAuth(true);
+      setIsAuth({ session: true });
       toast.success("Login success!");
       router.push("/rooms/add");
     }
