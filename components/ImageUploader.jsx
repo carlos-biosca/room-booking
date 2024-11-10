@@ -23,8 +23,8 @@ const ImageUploader = () => {
   };
 
   return (
-    <div className="mb-8">
-      <p className="block text-gray-700 font-bold mb-2">Image</p>
+    <div className="mb-4">
+      <p className="block text-gray-700 font-bold mb-2 ">Image</p>
       <div className="flex justify-between items-center">
         <input
           type="file"
@@ -38,7 +38,7 @@ const ImageUploader = () => {
           className="inline-block bg-gray-700 text-white px-4 py-2 rounded w-auto text-center hover:bg-gray-500"
           htmlFor="image"
         >
-          Choose Image
+          Select Image
         </label>
         {image ? (
           <button

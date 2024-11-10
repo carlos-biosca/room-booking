@@ -26,6 +26,7 @@ const AddRoom = () => {
   return (
     <>
       <Heading title="Add a room" />
+      <p className="mb-2 ml-3 md:ml-6 text-red-500">Required fields (*)</p>
       <div className="bg-white border rounded-lg p-3 md:p-6 w-full">
         <form action={formAction}>
           <div className="mb-4">
@@ -34,6 +35,7 @@ const AddRoom = () => {
               className="block text-gray-700 font-bold mb-2"
             >
               Room Name
+              <span className="text-red-500 ml-1">*</span>
             </label>
             <input
               type="text"
@@ -51,14 +53,51 @@ const AddRoom = () => {
               className="block text-gray-700 font-bold mb-2"
             >
               Description
+              <span className="text-red-500 ml-1">*</span>
             </label>
             <textarea
               id="description"
               name="description"
               className="border rounded w-full h-24 py-2 px-3"
-              placeholder="Enter a description"
+              placeholder="Enter room description"
               required
             ></textarea>
+          </div>
+
+          <div className="mb-4">
+            <label
+              htmlFor="location"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Location
+              <span className="text-red-500 ml-1">*</span>
+            </label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              className="border rounded w-full py-2 px-3"
+              placeholder="Example: Building A, floor 5, room B"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label
+              htmlFor="availability"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Availability
+              <span className="text-red-500 ml-1">*</span>
+            </label>
+            <input
+              type="text"
+              id="availability"
+              name="availability"
+              className="border rounded w-full py-2 px-3"
+              placeholder="Example: Monday - Friday, 9am - 5pm"
+              required
+            />
           </div>
 
           <div className="mb-4">
@@ -93,59 +132,8 @@ const AddRoom = () => {
             />
           </div>
 
-          <div className="mb-4">
-            <label
-              htmlFor="price_per_hour"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Price Per Hour
-            </label>
-            <input
-              type="number"
-              id="price_per_hour"
-              name="price_per_hour"
-              className="border rounded w-full py-2 px-3"
-              placeholder="Enter price per hour"
-              required
-            />
-          </div>
-
-          <div className="mb-4">
-            <label
-              htmlFor="location"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Location
-            </label>
-            <input
-              type="text"
-              id="location"
-              name="location"
-              className="border rounded w-full py-2 px-3"
-              placeholder="Location (Building, Floor, Room)"
-              required
-            />
-          </div>
-
-          <div className="mb-4">
-            <label
-              htmlFor="availability"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Availability
-            </label>
-            <input
-              type="text"
-              id="availability"
-              name="availability"
-              className="border rounded w-full py-2 px-3"
-              placeholder="Availability (Monday - Friday, 9am - 5pm)"
-              required
-            />
-          </div>
-
-          <AmenitiesOptions />
           <ImageUploader />
+          <AmenitiesOptions />
 
           <SubmitButton text="Add Room" />
         </form>

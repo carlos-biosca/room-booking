@@ -40,7 +40,6 @@ async function addRoom (previousState, formData) {
         capacity: formData.get("capacity"),
         location: formData.get("location"),
         availability: formData.get("availability"),
-        price_per_hour: formData.get("price_per_hour"),
         amenities: formData.get("amenities"),
         image: imageID
       }

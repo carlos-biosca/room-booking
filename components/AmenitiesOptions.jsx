@@ -22,7 +22,7 @@ const AmenitiesOptions = () => {
   };
 
   return (
-    <div className="mb-4">
+    <div className="mb-8">
       <label htmlFor="amenities" className="block text-gray-700 font-bold mb-2">
         Amenities
       </label>
