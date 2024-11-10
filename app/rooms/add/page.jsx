@@ -19,7 +19,7 @@ const AddRoom = () => {
     if (state?.error) toast.error(state.error);
     if (state?.success) {
       toast.success("Room added successfully!");
-      router.push("/rooms/list");
+      router.push("/rooms/user");
     }
   }, [state]);
 

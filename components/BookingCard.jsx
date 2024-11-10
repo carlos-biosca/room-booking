@@ -8,7 +8,7 @@ const BookingCard = ({ booking }) => {
   return (
     <div className="border p-4 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4">
       <div>
-        <h4 className="text-2xl font-semibold mb-3">{room_id.name}</h4>
+        <h4 className="text-4xl font-semibold mb-3">{room_id.name}</h4>
         <p className="text-sm md:text-lg text-gray-600">
           <strong>Location:</strong> {room_id.location}
         </p>

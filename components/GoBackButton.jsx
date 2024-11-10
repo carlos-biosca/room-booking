@@ -3,11 +3,13 @@
 import { useRouter } from "next/navigation";
 import { FaChevronLeft } from "react-icons/fa";
 
-const GoBackButton = () => {
+const GoBackButton = ({ show }) => {
   const router = useRouter();
   return (
     <button
-      className="flex items-center text-gray-600 hover:text-gray-800"
+      className={`${
+        show ? "flex items-center text-gray-600 hover:text-gray-800" : "hidden"
+      }`}
       onClick={() => router.back()}
     >
       <FaChevronLeft className="inline mr-1" />

@@ -25,7 +25,7 @@ const RoomPage = async ({ params }) => {
 
   return (
     <>
-      <Heading title={room.name} />
+      <Heading title={room.name} goBack />
       <div className="bg-white">
         <div className="flex flex-col">
           <div className="relative h-[250px] sm:h-[400px] mb-6 md:mb-10">
