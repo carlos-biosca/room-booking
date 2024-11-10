@@ -9,7 +9,7 @@ const HomeGallery = () => {
   return (
     <section className="h-auto md:h-[40vh] xl:h-[60vh] grid grid-cols-4 grid-rows-2 gap-5">
       <Image
-        className="h-full w-auto col-span-4 md:col-span-3 lg:col-span-2 row-span-2 object-cover rounded md:rounded-3xl"
+        className="h-full w-auto col-span-4 md:col-span-3 lg:col-span-2 row-span-2 object-cover rounded-lg md:rounded-3xl"
         src={gallery1}
         alt="image gallery 1"
         priority

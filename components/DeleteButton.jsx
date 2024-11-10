@@ -9,7 +9,9 @@ const DeleteButton = ({ id }) => {
   const [isPending, setIsPending] = useState(false);
 
   const handleDelete = async () => {
-    const confirmed = window.confirm("Confirm you want to delete this room");
+    const confirmed = window.confirm(
+      "Confirm you want to delete this room. This will cancel all room bookings."
+    );
 
     if (confirmed) {
       try {

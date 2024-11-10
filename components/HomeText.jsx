@@ -31,7 +31,7 @@ const HomeText = () => {
           <h3 className="text-md font-semibold">Room manage</h3>
           <p>
             Review your room list or remove the workspaces that are not
-            available anymore, and cancel all bookings scheduled.
+            available anymore.
           </p>
         </div>
         <div className="mb-4 ">
@@ -75,10 +75,6 @@ const HomeText = () => {
         <li>
           <strong>Customization</strong>: Tailor the app to fit your unique
           workspace needs.
-        </li>
-        <li>
-          <strong>Mobile Access</strong>: Book rooms on-the-go with our
-          responsive mobile app.
         </li>
         <li>
           <strong>Reliable Support</strong>: Our dedicated team ensures smooth

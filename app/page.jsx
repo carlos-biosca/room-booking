@@ -5,9 +5,8 @@ import Link from "next/link";
 export default async function Home() {
   return (
     <>
-      <h1 className="mb-3 text-4xl font-semibold">
-        Meeting Rooms <span className="text-xl">for</span>{" "}
-        <span className="text-2xl">Booking</span>
+      <h1 className="mb-3 text-2xl md:text-4xl font-semibold">
+        Meeting Rooms App
       </h1>
       <HomeGallery />
       <Link
