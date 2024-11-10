@@ -33,13 +33,6 @@ const RoomCard = ({ room }) => {
           <div className="p-4 sm:p-0">
             <h2 className="text-xl sm:text-2xl font-bold">{name}</h2>
             <p className="sm:text-lg text-gray-600">
-              <span className="font-semibold text-gray-800 ">
-                {" "}
-                Description:{" "}
-              </span>
-              {description}
-            </p>
-            <p className="sm:text-lg text-gray-600">
               <span className="font-semibold text-gray-800 "> Location: </span>
               {location}
             </p>
