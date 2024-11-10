@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { PiEye, PiEyeClosed } from "react-icons/pi";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
@@ -12,6 +14,14 @@ import SubmitButton from "@/components/SubmitButton";
 const Register = () => {
   const [state, formAction] = useFormState(createUser, {});
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState({
+    password: false,
+    confirm: false
+  });
+
+  const togglePasswordVisibility = value => {
+    setShowPassword(prev => ({ ...prev, [value]: !prev[value] }));
+  };
 
   useEffect(() => {
     if (state?.error) toast.error(state.error);
@@ -63,7 +73,7 @@ const Register = () => {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="relative mb-4">
             <label
               htmlFor="password"
               className="block text-gray-700 font-bold mb-2"
@@ -71,16 +81,23 @@ const Register = () => {
               Password
             </label>
             <input
-              type="password"
+              type={showPassword.password ? "text" : "password"}
               id="password"
               name="password"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 pl-3 pr-10"
               placeholder="minimum 8 characters"
               required
             />
+            <button
+              type="button"
+              className="absolute right-4 top-[46px]"
+              onClick={() => togglePasswordVisibility("password")}
+            >
+              {showPassword.password ? <PiEye /> : <PiEyeClosed />}
+            </button>
           </div>
 
-          <div className="mb-6">
+          <div className=" relative mb-6">
             <label
               htmlFor="confirm"
               className="block text-gray-700 font-bold mb-2"
@@ -88,13 +105,20 @@ const Register = () => {
               Confirm Password
             </label>
             <input
-              type="password"
+              type={showPassword.confirm ? "text" : "password"}
               id="confirm"
               name="confirm"
               className="border rounded w-full py-2 px-3"
               placeholder="minimum 8 characters"
               required
             />
+            <button
+              type="button"
+              className="absolute right-4 top-[46px]"
+              onClick={() => togglePasswordVisibility("confirm")}
+            >
+              {showPassword.confirm ? <PiEye /> : <PiEyeClosed />}
+            </button>
           </div>
 
           <div className="flex flex-col gap-5">
