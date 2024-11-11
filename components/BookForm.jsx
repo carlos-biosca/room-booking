@@ -89,6 +89,9 @@ const BookForm = ({ room }) => {
       </div>
 
       <SubmitButton text="Book Room" />
+      <p className="my-2 text-xs">
+        * The availability of the room will be checked automatically.
+      </p>
     </form>
   );
 };

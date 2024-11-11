@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useFormState } from "react-dom";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 import Heading from "@/components/Heading";
 import addRoom from "@/app/actions/addRoom";
@@ -26,6 +27,16 @@ const AddRoom = () => {
   return (
     <>
       <Heading title="Add a room" />
+      <p className="mb-6 md:text-lg">
+        Complete the following form to add a new room to the list of available
+        rooms, so that other users can book it. Not all fields are mandatory.
+        <br></br> If you are only interested in booking rooms, go directly to
+        the list of{" "}
+        <Link href="/rooms/list" className="font-semibold hover:underline">
+          Available rooms
+        </Link>
+        .
+      </p>
       <p className="mb-2 ml-3 md:ml-6 text-red-500">Required fields (*)</p>
       <div className="bg-white border rounded-lg p-3 md:p-6 w-full">
         <form action={formAction}>
@@ -44,6 +55,7 @@ const AddRoom = () => {
               className="border rounded w-full py-2 px-3"
               placeholder="Enter room name"
               required
+              autoComplete="on"
             />
           </div>
 
