@@ -1,8 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Room Booking
 
-## Getting Started
+Meeting room booking application for businesses.
+This is a [Next.js](https://nextjs.org/) project:
 
-First, run the development server:
+1. Set up a new Next.js project using `create-next-app`.
+2. Configured Tailwind CSS for styling.
+3. Implemented page routing using the file-based system.
+4. Created reusable components for consistent UI elements.
+5. Utilized Next.js's actions for data fetching.
+6. Optimized images and assets using Next.js's built-in features.
+
+### Getting Started
+
+For run the development server:
 
 ```bash
 npm run dev
@@ -16,20 +26,23 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- User registration and login forms.
+- Add meeting rooms form.
+- Room details page and booking form.
+- Room list manage.
+- Bookings list manage.
 
-## Learn More
+### Appwrite backend
 
-To learn more about Next.js, take a look at the following resources:
+For this project, I have used the [Appwrite](https://appwrite.io/) platform to handle our backend requirements. Appwrite is an open-source Backend-as-a-Service (BaaS) that provides a robust set of APIs for common backend functionalities.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Authentication**: Implemented secure user authentication using Appwrite's Auth API.
+2. **Database**: Utilized Appwrite's database service for storing and managing application data.
+3. **Storage**: Employed Appwrite's storage solution for handling image file uploads.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
+### Deployed on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
