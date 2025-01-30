@@ -35,7 +35,6 @@ async function deleteRoom (id) {
         findRoom.image
       )
       revalidatePath('/rooms/user', 'layout')
-      revalidatePath('/', 'layout')
 
       return {
         success: 'Room deleted successfully!'
