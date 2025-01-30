@@ -24,24 +24,25 @@ async function deleteRoom (id) {
     )
 
     const findRoom = rooms.find(room => room.$id === id)
-    if (findRoom) {
-      await databases.deleteDocument(
-        process.env.NEXT_PUBLIC_APPWRITE_DATABASE,
-        process.env.NEXT_PUBLIC_APPWRITE_ROOMS,
-        findRoom.$id
-      )
-      await storage.deleteFile(
-        process.env.NEXT_PUBLIC_APPWRITE_IMAGES,
-        findRoom.image
-      )
-      revalidatePath('/rooms/user', 'layout')
-
-      return {
-        success: 'Room deleted successfully!'
-      }
+    if (!findRoom) {
+        return {
+          error: 'Room not found'
+        }
     }
+
+    await databases.deleteDocument(
+      process.env.NEXT_PUBLIC_APPWRITE_DATABASE,
+      process.env.NEXT_PUBLIC_APPWRITE_ROOMS,
+      findRoom.$id
+    )
+    await storage.deleteFile(
+      process.env.NEXT_PUBLIC_APPWRITE_IMAGES,
+      findRoom.image
+    )
+    
+    revalidatePath('/rooms/user', 'layout')
     return {
-      error: 'Room not found'
+      success: 'Room deleted successfully!'
     }
   } catch (err) {
     console.log(err);
