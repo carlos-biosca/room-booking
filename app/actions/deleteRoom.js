@@ -35,6 +35,13 @@ async function deleteRoom (id) {
       process.env.NEXT_PUBLIC_APPWRITE_ROOMS,
       findRoom.$id
     )
+
+    if (findRoom.image) {
+      await storage.deleteFile(
+        process.env.NEXT_PUBLIC_APPWRITE_IMAGES,
+        findRoom.image
+      )
+    } 
     
     revalidatePath('/rooms/user', 'layout')
     return {
