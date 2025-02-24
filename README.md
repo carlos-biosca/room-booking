@@ -10,6 +10,10 @@ This is a [Next.js](https://nextjs.org/) project:
 5. Utilized Next.js's actions for data fetching.
 6. Optimized images and assets using Next.js's built-in features.
 
+### Demo
+
+![booking rooms](./assets/DemoProject.gif)
+
 ### Getting Started
 
 For run the development server:
