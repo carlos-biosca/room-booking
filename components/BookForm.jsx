@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useFormState } from "react-dom";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+
 import bookRoom from "@/app/actions/bookRoom";
 import SubmitButton from "./SubmitButton";
 
@@ -22,14 +23,14 @@ const BookForm = ({ room }) => {
   return (
     <form
       action={formAction}
-      className="max-h-max p-4 border-2 rounded-xl md:col-span-2"
+      className="md:col-span-2 p-4 border-2 rounded-xl max-h-max"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+      <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 mb-6">
         <input type="hidden" name="room_id" value={room.$id} />
         <div>
           <label
             htmlFor="check_in_date"
-            className="block text-sm font-medium text-gray-700"
+            className="block font-medium text-gray-700 text-sm"
           >
             Check-In Date
           </label>
@@ -37,14 +38,14 @@ const BookForm = ({ room }) => {
             type="date"
             id="check_in_date"
             name="check_in_date"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
+            className="block shadow-sm mt-1 px-3 py-2 border border-gray-300 rounded-md w-full sm:text-sm"
             required
           />
         </div>
         <div>
           <label
             htmlFor="check_in_time"
-            className="block text-sm font-medium text-gray-700"
+            className="block font-medium text-gray-700 text-sm"
           >
             Check-In Time
           </label>
@@ -52,14 +53,14 @@ const BookForm = ({ room }) => {
             type="time"
             id="check_in_time"
             name="check_in_time"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
+            className="block shadow-sm mt-1 px-3 py-2 border border-gray-300 rounded-md w-full sm:text-sm"
             required
           />
         </div>
         <div>
           <label
             htmlFor="check_out_date"
-            className="block text-sm font-medium text-gray-700"
+            className="block font-medium text-gray-700 text-sm"
           >
             Check-Out Date
           </label>
@@ -67,14 +68,14 @@ const BookForm = ({ room }) => {
             type="date"
             id="check_out_date"
             name="check_out_date"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
+            className="block shadow-sm mt-1 px-3 py-2 border border-gray-300 rounded-md w-full sm:text-sm"
             required
           />
         </div>
         <div>
           <label
             htmlFor="check_out_time"
-            className="block text-sm font-medium text-gray-700"
+            className="block font-medium text-gray-700 text-sm"
           >
             Check-Out Time
           </label>
@@ -82,7 +83,7 @@ const BookForm = ({ room }) => {
             type="time"
             id="check_out_time"
             name="check_out_time"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
+            className="block shadow-sm mt-1 px-3 py-2 border border-gray-300 rounded-md w-full sm:text-sm"
             required
           />
         </div>
