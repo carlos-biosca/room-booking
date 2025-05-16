@@ -12,7 +12,7 @@ This is a [Next.js](https://nextjs.org/) project:
 
 ### Demo
 
-![booking rooms](./assets/DemoProject.gif)
+![booking rooms](./public/assets/DemoProject.gif)
 
 ### Getting Started
 

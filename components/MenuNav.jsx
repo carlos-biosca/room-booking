@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/assets/logo.png";
 
 import { IoMenu } from "react-icons/io5";
 
@@ -15,10 +14,15 @@ const MenuNav = ({ isAuth, toggleMenu, handleLogout }) => {
   const pathname = usePathname();
 
   return (
-    <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="flex h-16 items-center justify-between">
+    <nav className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="flex justify-between items-center h-16">
         <Link href="/">
-          <Image className="h-12 w-auto" src={logo} alt="R" priority />
+          <Image
+            className="w-auto h-12"
+            src="/assets/logo.png"
+            alt="R"
+            priority
+          />
         </Link>
         {isAuth ? (
           <div className="hidden md:block">
@@ -46,24 +50,24 @@ const MenuNav = ({ isAuth, toggleMenu, handleLogout }) => {
 
         <div className="flex">
           {isAuth ? (
-            <div className="ml-4 flex items-center md:ml-6">
+            <div className="flex items-center ml-4 md:ml-6">
               {isAuth.session ? (
                 <div className="hidden md:flex items-center">
                   <Link
                     href="/rooms/user"
-                    className="mr-3 text-sm font-medium text-gray-800 hover:text-gray-600 hover:underline"
+                    className="mr-3 font-medium text-gray-800 hover:text-gray-600 text-sm hover:underline"
                   >
                     My Rooms
                   </Link>
                   <Link
                     href="/bookings"
-                    className="mr-3 text-sm font-medium text-gray-800 hover:text-gray-600 hover:underline"
+                    className="mr-3 font-medium text-gray-800 hover:text-gray-600 text-sm hover:underline"
                   >
                     Bookings
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="block sm:inline-block border border-gray-700 px-4 py-[6px] rounded w-auto hover:bg-gray-700 hover:text-white"
+                    className="block sm:inline-block hover:bg-gray-700 px-4 py-[6px] border border-gray-700 rounded w-auto hover:text-white"
                   >
                     Logout
                   </button>
@@ -83,7 +87,7 @@ const MenuNav = ({ isAuth, toggleMenu, handleLogout }) => {
             </div>
           ) : null}
           <button
-            className="block md:hidden ml-3 px-1 border border-gray-800"
+            className="md:hidden block ml-3 px-1 border border-gray-800"
             onClick={toggleMenu}
           >
             <IoMenu size={36} />
